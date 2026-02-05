@@ -42,6 +42,7 @@ export async function updateProfile(formData: FormData) {
     } catch (error) {
         console.error("Profile update error:", error);
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        return { success: false, error: (error as any).message || "Failed to update profile" };
+        const errorMessage = (error as any)?.message || "Failed to update profile";
+        return { success: false, error: errorMessage };
     }
 }

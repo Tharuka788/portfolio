@@ -24,6 +24,7 @@ export async function addProject(formData: FormData) {
         revalidatePath("/admin");
         return { success: true };
     } catch (error) {
+        console.error("Add Project Error:", error);
         return { success: false, error: "Failed to add project" };
     }
 }
@@ -36,6 +37,7 @@ export async function deleteProject(id: string) {
         revalidatePath("/admin");
         return { success: true };
     } catch (error) {
+        console.error("Delete Project Error:", error);
         return { success: false, error: "Failed to delete project" };
     }
 }
