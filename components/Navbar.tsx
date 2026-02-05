@@ -21,10 +21,10 @@ export const Navbar = () => {
                         <a
                             key={link.name}
                             href={link.href}
-                            className="text-sm font-medium text-neutral-300 hover:text-neon-purple transition-colors relative group"
+                            className="text-sm font-medium text-neutral-400 hover:text-white transition-colors relative group"
                         >
                             {link.name}
-                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-purple transition-all group-hover:w-full" />
+                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all group-hover:w-full" />
                         </a>
                     ))}
                 </div>

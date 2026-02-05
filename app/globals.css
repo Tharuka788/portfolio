@@ -1,15 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-deep-dark: #020617;
-  --color-neon-purple: #a855f7;
+  --color-deep-dark: #0a0a0a;
+  --color-neon-purple: #c0c0c0;
+  /* Silver/Gray instead of Purple */
   --color-dark-gray: #1e293b;
   --color-off-white: #f8fafc;
 }
 
 :root {
-  --background: #020617;
-  --foreground: #f8fafc;
+  --background: #050505;
+  --foreground: #e5e5e5;
+  --neon-purple: #c0c0c0;
+  /* Silver/Gray instead of Purple */
+  --deep-dark: #0a0a0a;
+  --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 html {
@@ -19,17 +24,39 @@ html {
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-  @apply antialiased selection:bg-neon-purple selection:text-white;
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
-/* Glassmorphism Utilities */
+/* Custom Scrollbar for Chrome */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Utilities */
 .glass {
-  @apply bg-white/5 backdrop-blur-md border border-white/10;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
 }
 
-.glass-hover {
-  @apply hover:bg-white/10 transition-all duration-300;
+.text-gradient {
+  background: linear-gradient(to right, #ffffff, #888888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
