@@ -5,6 +5,8 @@ import { Skills } from "@/components/Skills";
 import { Projects } from "@/components/Projects";
 import { Contact } from "@/components/Contact";
 import dbConnect from "@/lib/db";
+
+export const dynamic = "force-dynamic";
 import Profile from "@/models/Profile";
 
 async function getProfile() {
