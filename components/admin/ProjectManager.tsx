@@ -1,6 +1,6 @@
 "use client";
 import { addProject, deleteProject } from "@/actions/manageProjects";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { FaTrash, FaPlus } from "react-icons/fa";
 
@@ -10,6 +10,17 @@ interface ProjectManagerProps {
 
 export default function ProjectManager({ projects }: ProjectManagerProps) {
     // Optimistic UI updates could be added here, but for simplicity relying on server revalidate
+
+    const formRef = useRef<HTMLFormElement>(null);
+
+    const handleAddProject = async (formData: FormData) => {
+        const res = await addProject(formData);
+        if (res.success) {
+            formRef.current?.reset();
+        } else {
+            alert("Failed to add project");
+        }
+    };
 
     return (
         <motion.div
@@ -21,7 +32,7 @@ export default function ProjectManager({ projects }: ProjectManagerProps) {
             <h2 className="text-2xl font-bold text-white mb-6">Manage Projects</h2>
 
             {/* Add Project Form */}
-            <form action={addProject} className="mb-12 bg-white/5 p-6 rounded-xl border border-white/10">
+            <form ref={formRef} action={handleAddProject} className="mb-12 bg-white/5 p-6 rounded-xl border border-white/10">
                 <h3 className="text-lg font-semibold text-neon-purple mb-4 flex items-center gap-2"><FaPlus /> Add New</h3>
                 <div className="grid md:grid-cols-2 gap-4">
                     <input name="title" placeholder="Project Title" required className="w-full bg-black/40 border border-white/10 p-3 rounded text-white" />
