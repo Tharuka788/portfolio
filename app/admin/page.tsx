@@ -4,6 +4,8 @@ import Project from "@/models/Project";
 import ProfileForm from "@/components/admin/ProfileForm";
 import ProjectManager from "@/components/admin/ProjectManager";
 
+export const dynamic = "force-dynamic";
+
 async function getData() {
     await dbConnect();
     const profile = await Profile.findOne({});
