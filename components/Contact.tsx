@@ -121,7 +121,7 @@ export const Contact = ({ profile }: ContactProps) => {
                     <button
                         type="submit"
                         disabled={status === "loading"}
-                        className="w-full bg-neon-purple text-black font-bold py-3 rounded-lg hover:bg-purple-400 transition-colors disabled:opacity-50"
+                        className="w-full bg-white text-black font-bold py-3 rounded-lg hover:bg-neon-purple transition-colors disabled:opacity-50"
                     >
                         {status === "loading" ? "Sending..." : status === "success" ? "Message Sent!" : status === "error" ? "Failed to Send" : "Send Message"}
                     </button>

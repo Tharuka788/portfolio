@@ -70,7 +70,7 @@ export const Hero = ({ profile }: HeroProps) => {
                     <div className="flex flex-col md:flex-row items-center gap-8">
                         <a
                             href="#projects"
-                            className="bg-white text-black px-10 py-4 font-bold text-lg hover:bg-neutral-200 transition-colors w-full md:w-auto text-center"
+                            className="bg-white text-black px-10 py-4 font-bold text-lg hover:bg-neon-purple hover:text-black transition-colors w-full md:w-auto text-center"
                         >
                             Explore Now
                         </a>

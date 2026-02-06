@@ -70,7 +70,7 @@ export default function ProfileForm({ profile }: ProfileFormProps) {
                 </div>
 
                 <div className="md:col-span-2 mt-4">
-                    <button type="submit" className="bg-neon-purple text-black font-bold py-3 px-8 rounded-lg hover:bg-purple-400 transition-colors w-full md:w-auto">
+                    <button type="submit" className="bg-white text-black font-bold py-3 px-8 rounded-lg hover:bg-neon-purple transition-colors w-full md:w-auto">
                         Save Changes
                     </button>
                     {msg && <span className={`ml-4 font-medium ${msg.includes("Error") ? "text-red-500" : "text-green-500"}`}>{msg}</span>}
