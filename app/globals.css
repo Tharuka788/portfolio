@@ -1,18 +1,16 @@
 @import "tailwindcss";
 
-@theme {
+/* Tailwind v3 සහ v4 යන දෙකටම ගැලපෙන පරිදි CSS variables භාවිතා කරමු */
+:root {
+  /* ඔයාගේ theme colors මෙතනට ඇතුළත් කරා */
   --color-deep-dark: #0a0a0a;
-  --color-neon-purple: #c0c0c0;
-  /* Silver/Gray instead of Purple */
+  --color-neon-purple: #c0c0c0; /* Silver/Gray instead of Purple */
   --color-dark-gray: #1e293b;
   --color-off-white: #f8fafc;
-}
 
-:root {
   --background: #050505;
   --foreground: #e5e5e5;
   --neon-purple: #c0c0c0;
-  /* Silver/Gray instead of Purple */
   --deep-dark: #0a0a0a;
   --glass-border: rgba(255, 255, 255, 0.1);
 }
@@ -20,7 +18,6 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
-  /* Offset for sticky navbar */
 }
 
 body {
@@ -30,7 +27,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom Scrollbar for Chrome */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -48,13 +45,14 @@ body {
   background: #555;
 }
 
-/* Utilities */
+/* Glassmorphism utility */
 .glass {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
   border: 1px solid var(--glass-border);
 }
 
+/* Text gradient utility */
 .text-gradient {
   background: linear-gradient(to right, #ffffff, #888888);
   -webkit-background-clip: text;

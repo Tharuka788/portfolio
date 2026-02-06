@@ -10,6 +10,7 @@ export interface IProfile extends Document {
         github: string;
         linkedin: string;
         email: string;
+        mobile?: string;
     };
 }
 
@@ -23,6 +24,7 @@ const ProfileSchema: Schema = new Schema({
         github: { type: String, required: true },
         linkedin: { type: String, required: true },
         email: { type: String, required: true },
+        mobile: { type: String },
     },
 });
 

@@ -57,6 +57,10 @@ export default function ProfileForm({ profile }: ProfileFormProps) {
                     <input name="email" defaultValue={profile?.socials?.email} className="w-full bg-black/40 border border-white/10 p-3 rounded text-white" />
                 </div>
                 <div>
+                    <label className="block text-neutral-400 mb-2">Mobile Number</label>
+                    <input name="mobile" defaultValue={profile?.socials?.mobile} placeholder="+94 7X XXX XXXX" className="w-full bg-black/40 border border-white/10 p-3 rounded text-white" />
+                </div>
+                <div>
                     <label className="block text-neutral-400 mb-2">GitHub URL</label>
                     <input name="github" defaultValue={profile?.socials?.github} className="w-full bg-black/40 border border-white/10 p-3 rounded text-white" />
                 </div>

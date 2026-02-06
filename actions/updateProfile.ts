@@ -13,9 +13,10 @@ export async function updateProfile(formData: FormData) {
     const github = formData.get("github") as string;
     const linkedin = formData.get("linkedin") as string;
     const email = formData.get("email") as string;
+    const mobile = formData.get("mobile") as string;
     const resumeLink = formData.get("resumeLink") as string;
 
-    console.log("Update Profile Request:", { name, email, github, linkedin, role });
+    console.log("Update Profile Request:", { name, email, github, linkedin, role, mobile });
 
     try {
         // Find the first profile and update it
@@ -30,7 +31,8 @@ export async function updateProfile(formData: FormData) {
                 resumeLink,
                 "socials.github": github,
                 "socials.linkedin": linkedin,
-                "socials.email": email
+                "socials.email": email,
+                "socials.mobile": mobile
             },
             { upsert: true, new: true }
         );

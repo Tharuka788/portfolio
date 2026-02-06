@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
 import { sendEmail } from "@/actions/sendEmail";
 import { useState, useRef } from "react";
 
@@ -10,6 +10,7 @@ interface ContactProps {
             email: string;
             linkedin: string;
             github: string;
+            mobile?: string;
         }
     } | null;
 }
@@ -21,6 +22,7 @@ export const Contact = ({ profile }: ContactProps) => {
     const email = profile?.socials?.email || "tharuka@example.com";
     const linkedin = profile?.socials?.linkedin || "https://www.linkedin.com/in/tharuka-umayanga-89998a295";
     const github = profile?.socials?.github || "https://github.com/Tharuka788";
+    const mobile = profile?.socials?.mobile;
 
     const handleSubmit = async (formData: FormData) => {
         setStatus("loading");
@@ -81,6 +83,17 @@ export const Contact = ({ profile }: ContactProps) => {
                                 <a href={github} target="_blank" className="hover:text-neon-purple transition-colors">Tharuka788</a>
                             </div>
                         </div>
+                        {mobile && (
+                            <div className="flex items-center gap-4 text-neutral-300">
+                                <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-neon-purple">
+                                    <FaPhone size={20} />
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold text-white">Phone</h4>
+                                    <a href={`tel:${mobile}`} className="hover:text-neon-purple transition-colors">{mobile}</a>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
 
