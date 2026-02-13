@@ -111,6 +111,15 @@ export const Projects = () => {
                                     {repo.description || "No description available."}
                                 </p>
 
+                                <a
+                                    href={repo.html_url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center justify-center gap-2 mb-4 px-4 py-2 rounded-lg bg-neon-purple/10 border border-neon-purple/50 text-neon-purple hover:bg-neon-purple hover:text-black transition-all duration-300 font-bold w-full"
+                                >
+                                    <FaGithub /> Get Code
+                                </a>
+
                                 <div className="flex items-center justify-between mt-auto">
                                     <span className="text-xs font-semibold text-neon-purple bg-neon-purple/10 px-3 py-1 rounded-full">
                                         {repo.language || repo.tags?.[0] || "Code"}
