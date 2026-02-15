@@ -2,9 +2,11 @@
 import { motion } from "framer-motion";
 import {
     SiMongodb, SiPhp, SiMysql, SiReact,
-    SiNodedotjs, SiExpress, SiPython, SiHtml5, SiTailwindcss, SiGit
+    SiNodedotjs, SiExpress, SiPython, SiHtml5, SiTailwindcss, SiGit,
+    SiKotlin, SiCplusplus, SiGithub, SiPostman
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
+import { BiBarChart } from "react-icons/bi";
 
 const skillsData = [
     {
@@ -12,6 +14,8 @@ const skillsData = [
         items: [
             { name: "Java", icon: <FaJava className="text-red-500" /> },
             { name: "Python", icon: <SiPython className="text-yellow-400" /> },
+            { name: "Kotlin", icon: <SiKotlin className="text-purple-500" /> },
+            { name: "C++", icon: <SiCplusplus className="text-blue-600" /> },
             { name: "PHP", icon: <SiPhp className="text-indigo-400" /> },
             { name: "HTML5", icon: <SiHtml5 className="text-orange-500" /> },
         ]
@@ -20,7 +24,7 @@ const skillsData = [
         category: "Frameworks & Libraries",
         items: [
             { name: "React", icon: <SiReact className="text-cyan-400" /> },
-            { name: "Next.js", icon: <div className="dark:text-white text-black font-bold text-xs">NEXT</div> }, // Placeholder icon or use SiNextdotjs if available
+            { name: "Next.js", icon: <div className="dark:text-white text-black font-bold text-xs">NEXT</div> },
             { name: "Node.js", icon: <SiNodedotjs className="text-green-600" /> },
             { name: "Express.js", icon: <SiExpress className="text-white" /> },
             { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-300" /> },
@@ -31,7 +35,10 @@ const skillsData = [
         items: [
             { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
             { name: "MySQL", icon: <SiMysql className="text-blue-500" /> },
+            { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
+            { name: "Power BI", icon: <BiBarChart className="text-yellow-500" /> },
             { name: "Git", icon: <SiGit className="text-orange-600" /> },
+            { name: "GitHub", icon: <SiGithub className="text-white" /> },
         ]
     }
 ];
