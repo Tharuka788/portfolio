@@ -108,11 +108,11 @@ export const Contact = ({ profile }: ContactProps) => {
                 >
                     <div>
                         <label className="block text-sm font-medium text-neutral-400 mb-2">Name</label>
-                        <input name="name" type="text" required className="w-full bg-black/40 border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-neon-purple transition-colors" placeholder="John Doe" />
+                        <input name="name" type="text" required className="w-full bg-black/40 border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-neon-purple transition-colors" placeholder="name" />
                     </div>
                     <div>
                         <label className="block text-sm font-medium text-neutral-400 mb-2">Email</label>
-                        <input name="email" type="email" required className="w-full bg-black/40 border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-neon-purple transition-colors" placeholder="john@example.com" />
+                        <input name="email" type="email" required className="w-full bg-black/40 border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-neon-purple transition-colors" placeholder="name@example.com" />
                     </div>
                     <div>
                         <label className="block text-sm font-medium text-neutral-400 mb-2">Message</label>
