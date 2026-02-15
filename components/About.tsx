@@ -8,9 +8,7 @@ interface AboutProps {
 }
 
 export const About = ({ profile }: AboutProps) => {
-    // If we want to split the bio from DB dynamically, we might need a richer structure or just display it.
-    // For now, let's just show the DB bio if exists, else fallback.
-    const bioText = profile?.bio || "I am a 3rd Year IT Undergraduate at SLIIT with a strong foundation in software engineering principles. My journey involves exploring diverse technologies, from building robust backends with Node.js and Java to crafting immersive frontends using React and Next.js.";
+
 
     return (
         <section id="about" className="py-20 px-6 bg-dark-gray/30">
@@ -34,12 +32,20 @@ export const About = ({ profile }: AboutProps) => {
                     <div className="absolute top-0 right-0 w-32 h-32 bg-neon-purple/10 rounded-full blur-3xl -z-10"></div>
                     <div className="absolute bottom-0 left-0 w-32 h-32 bg-teal-400/10 rounded-full blur-3xl -z-10"></div>
 
-                    <p className="text-lg text-neutral-300 leading-relaxed mb-6">
-                        {bioText}
-                    </p>
-                    <p className="text-lg text-neutral-300 leading-relaxed">
-                        I thrive on solving complex problems and am constantly learning to stay ahead in the fast-evolving tech landscape. My goal is to contribute to impactful projects that make a difference.
-                    </p>
+                    <div className="space-y-6 text-lg text-neutral-300 leading-relaxed text-left">
+                        <p>
+                            Hi, I’m Tharuka Umayanga — a passionate IT undergraduate and aspiring Full-Stack MERN Developer who enjoys turning ideas into interactive digital experiences.
+                        </p>
+                        <p>
+                            I love building applications from the ground up — from designing clean user interfaces in Figma to developing powerful backend systems using MongoDB, Express, React, and Node.js. For me, coding is not just about writing functions; it’s about solving problems, creating smooth user experiences, and building technology that people actually enjoy using.
+                        </p>
+                        <p>
+                            My journey in software development has allowed me to explore multiple technologies including Java, Android development, PHP, MySQL, JavaScript, HTML, and Tailwind CSS, helping me understand both the technical and creative sides of development.
+                        </p>
+                        <p>
+                            I’m constantly learning, experimenting, and improving my skills with the goal of becoming a developer who builds efficient, scalable, and meaningful software solutions. Every project I work on is another step toward transforming creativity into real-world impact.
+                        </p>
+                    </div>
                 </motion.div>
             </div>
         </section>

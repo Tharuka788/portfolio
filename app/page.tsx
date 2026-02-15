@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
+import { Education } from "@/components/Education";
 import { Skills } from "@/components/Skills";
 import { Projects } from "@/components/Projects";
 import { Contact } from "@/components/Contact";
@@ -33,6 +34,7 @@ export default async function Home() {
       <div className="flex flex-col space-y-0">
         <Hero profile={profile} />
         <About profile={profile} />
+        <Education />
         <Skills />
         <Projects />
         <Contact profile={profile} />
