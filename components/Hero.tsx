@@ -75,18 +75,7 @@ export const Hero = ({ profile }: HeroProps) => {
                             Explore Now
                         </a>
 
-                        <a
-                            href={resumeLink}
-                            target="_blank"
-                            className="flex items-center gap-4 group cursor-pointer"
-                        >
-                            <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:border-white transition-colors">
-                                <FaPlay className="ml-1 text-white group-hover:scale-110 transition-transform" size={14} />
-                            </div>
-                            <span className="font-medium text-neutral-300 group-hover:text-white transition-colors">
-                                View Resume
-                            </span>
-                        </a>
+                        {/* View Resume button removed as per user request */}
                     </div>
                 </motion.div>
             </div>
