@@ -44,3 +44,37 @@ export async function deleteProject(id: string) {
         return { success: false, error: "Failed to delete project" };
     }
 }
+
+export async function updateProject(id: string, formData: FormData) {
+    await dbConnect();
+
+    const title = formData.get("title") as string;
+    const description = formData.get("description") as string;
+    const repo = formData.get("repo") as string;
+    const demo = formData.get("demo") as string;
+    const figma = formData.get("figma") as string;
+    const image = formData.get("image") as string;
+    const tags = (formData.get("tags") as string).split(",").map(t => t.trim());
+
+    try {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const updateData: any = {
+            title,
+            description,
+            tags,
+            links: { repo, demo, figma }
+        };
+
+        if (image) {
+            updateData.image = image;
+        }
+
+        await Project.findByIdAndUpdate(id, updateData);
+        revalidatePath("/");
+        revalidatePath("/admin");
+        return { success: true };
+    } catch (error) {
+        console.error("Update Project Error:", error);
+        return { success: false, error: "Failed to update project" };
+    }
+}
