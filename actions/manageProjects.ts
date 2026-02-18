@@ -10,6 +10,8 @@ export async function addProject(formData: FormData) {
     const description = formData.get("description") as string;
     const repo = formData.get("repo") as string;
     const demo = formData.get("demo") as string;
+    const figma = formData.get("figma") as string;
+    const image = formData.get("image") as string;
     const tags = (formData.get("tags") as string).split(",").map(t => t.trim());
 
     try {
@@ -17,7 +19,8 @@ export async function addProject(formData: FormData) {
             title,
             description,
             tags,
-            links: { repo, demo },
+            image: image || '/project-placeholder.jpg',
+            links: { repo, demo, figma },
             featured: true
         });
         revalidatePath("/");

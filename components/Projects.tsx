@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt, FaStar, FaCode } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaStar, FaCode, FaFigma } from "react-icons/fa";
 import { GITHUB_USERNAME } from "@/lib/constants";
 
 interface Project {
@@ -10,6 +10,7 @@ interface Project {
     name: string;
     description: string;
     html_url: string;
+    figma_url?: string;
     stargazers_count?: number;
     language?: string;
     tags?: string[];
@@ -52,6 +53,7 @@ export const Projects = () => {
                     name: proj.title,
                     description: proj.description,
                     html_url: proj.links.repo, // Default to repo link for main click
+                    figma_url: proj.links.figma,
                     language: proj.tags[0],
                     tags: proj.tags,
                     isManual: true,
@@ -131,14 +133,26 @@ export const Projects = () => {
                                     {repo.description || "No description available."}
                                 </p>
 
-                                <a
-                                    href={repo.html_url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center justify-center gap-2 mb-4 px-4 py-2 rounded-lg bg-neon-purple/10 border border-neon-purple/50 text-neon-purple hover:bg-neon-purple hover:text-black transition-all duration-300 font-bold w-full relative z-10"
-                                >
-                                    <FaGithub /> Get Code
-                                </a>
+                                <div className="flex gap-3 mb-4 relative z-10">
+                                    <a
+                                        href={repo.html_url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-neon-purple/10 border border-neon-purple/50 text-neon-purple hover:bg-neon-purple hover:text-black transition-all duration-300 font-bold"
+                                    >
+                                        <FaGithub /> Code
+                                    </a>
+                                    {repo.figma_url && (
+                                        <a
+                                            href={repo.figma_url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-pink-500/10 border border-pink-500/50 text-pink-500 hover:bg-pink-500 hover:text-white transition-all duration-300 font-bold"
+                                        >
+                                            <FaFigma /> Design
+                                        </a>
+                                    )}
+                                </div>
 
                                 <div className="flex items-center justify-between mt-auto relative z-10">
 

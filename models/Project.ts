@@ -8,6 +8,7 @@ export interface IProject extends Document {
     links: {
         demo?: string;
         repo: string;
+        figma?: string;
     };
     featured: boolean;
 }
@@ -20,6 +21,7 @@ const ProjectSchema: Schema = new Schema({
     links: {
         demo: { type: String },
         repo: { type: String, required: true },
+        figma: { type: String },
     },
     featured: { type: Boolean, default: false },
 });

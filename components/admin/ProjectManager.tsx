@@ -39,6 +39,8 @@ export default function ProjectManager({ projects }: ProjectManagerProps) {
                     <input name="tags" placeholder="Tags (comma separated: React, Node)" required className="w-full bg-black/40 border border-white/10 p-3 rounded text-white" />
                     <input name="repo" placeholder="GitHub Repo URL" required className="w-full bg-black/40 border border-white/10 p-3 rounded text-white" />
                     <input name="demo" placeholder="Live Demo URL (Optional)" className="w-full bg-black/40 border border-white/10 p-3 rounded text-white" />
+                    <input name="figma" placeholder="Figma Design URL (Optional)" className="w-full bg-black/40 border border-white/10 p-3 rounded text-white" />
+                    <input name="image" placeholder="Image Path (e.g. /camping_store.png)" className="w-full bg-black/40 border border-white/10 p-3 rounded text-white" />
                     <textarea name="description" placeholder="Description" rows={2} required className="md:col-span-2 w-full bg-black/40 border border-white/10 p-3 rounded text-white" />
                 </div>
                 <button type="submit" className="mt-4 bg-teal-500 text-black font-bold py-2 px-6 rounded hover:bg-teal-400 transition-colors">
