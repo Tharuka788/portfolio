@@ -138,7 +138,7 @@ export const Projects = () => {
                                         href={repo.html_url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-neon-purple/10 border border-neon-purple/50 text-neon-purple hover:bg-neon-purple hover:text-black transition-all duration-300 font-bold"
+                                        className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-neon-purple/10 border border-neon-purple/50 text-neon-purple hover:bg-white hover:text-black hover:border-white transition-all duration-300 font-bold"
                                     >
                                         <FaGithub /> Code
                                     </a>
